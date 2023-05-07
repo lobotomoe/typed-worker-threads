@@ -85,6 +85,10 @@ parentPort.on("message", (message) => {
 - `Thread<ParentToChild, ChildToParent>`: Class for creating and managing worker threads.
 - `parentPort`: An instance of `MessagePort` to communicate with the main thread.
 
+## Notice about transfer between threads
+
+The "structured clone algorithm" is used to send messages between threads. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). `typed-worker-threads` has a built-in type `StructureCloned` that describes the types that can be sent between threads safely. If you want to send a type that is not `StructureCloned`, you can use the `transferList` (supports `ArrayBuffer`, `MessagePort`, `FileHandle`) option when sending a message. Read more about it [here](https://nodejs.org/api/worker_threads.html#worker_threads_port_postmessage_value_transferlist).
+
 ## License
 
 Typed Worker Threads is released under the BSD-3-Clause License. See [LICENSE](LICENSE) for details.

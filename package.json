@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/lobotomoe/typed-worker-threads.git"
   },
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Type-safe wrapper for Node.js Worker Threads",
   "type": "module",
   "scripts": {

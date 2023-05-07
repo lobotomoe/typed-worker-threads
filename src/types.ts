@@ -24,6 +24,7 @@ interface StructureClonedRecord<T> extends Record<string | number | symbol, T> {
 export type StructureCloned =
 	| StructureClonedArray<StructureCloned>
 	| ArrayBuffer
+	| SharedArrayBuffer
 	| boolean
 	| DataView
 	| Date
@@ -35,6 +36,7 @@ export type StructureCloned =
 	| RegExp
 	| Set<StructureCloned>
 	| TypedArray
+	| WebAssembly.Module
 	| undefined
 	| null
 	| bigint;
