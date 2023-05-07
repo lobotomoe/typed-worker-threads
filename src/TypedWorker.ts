@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import {type TransferListItem, Worker} from 'worker_threads';
-import {type TypedWorkerOptions, type WithTypedMessage} from './types.js';
+import {type StructureCloned, type TypedWorkerOptions, type WithTypedMessage} from './types.js';
 
 export default class TypedWorker<
-	TIn,
-	TOut,
+	TIn extends StructureCloned,
+	TOut extends StructureCloned,
 	TData,
 	TArgv extends unknown[] = unknown[],
 > extends Worker {

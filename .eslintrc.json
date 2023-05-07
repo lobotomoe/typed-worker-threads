@@ -3,17 +3,9 @@
     "es2021": true,
     "node": true
   },
-  "extends": "xo",
-  "overrides": [
-    {
-      "extends": [
-        "xo-typescript"
-      ],
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ]
-    }
+  "extends": [
+    "xo",
+    "xo-typescript"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -22,6 +14,8 @@
   "rules": {
     "capitalized-comments": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
+    "@typescript-eslint/consistent-type-definitions": "off"
   }
 }

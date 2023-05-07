@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import {MessagePort, type TransferListItem} from 'worker_threads';
-import {type WithTypedMessage} from './types.js';
+import {type StructureCloned, type WithTypedMessage} from './types.js';
 
 export default class TypedMessagePort<
-	TIn,
-	TOut,
+	TIn extends StructureCloned,
+	TOut extends StructureCloned,
 > extends MessagePort {
 	override postMessage(value: TIn, transferList?: readonly TransferListItem[]) {
 		super.postMessage(value, transferList);

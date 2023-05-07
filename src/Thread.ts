@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/naming-convention */
 import type TypedMessagePort from './TypedMessagePort.js';
 import TypedWorker from './TypedWorker.js';
 import {parentPort, workerData, isMainThread} from 'worker_threads';
-import {type TypedWorkerOptions} from './types.js';
+import {type StructureCloned, type TypedWorkerOptions} from './types.js';
 
 export default class Thread<
-	TIn,
-	TOut,
+	TIn extends StructureCloned,
+	TOut extends StructureCloned,
 	TData = unknown,
 	TArgv extends unknown[] = unknown[],
 > {
